@@ -1,0 +1,2 @@
+module Notifications::Controllers
+end

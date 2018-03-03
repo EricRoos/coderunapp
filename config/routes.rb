@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
+  get 'static/home'
+  root to: 'static#home'
+  get 'users/search', to: 'accounts/controllers/users#search'
+
+  devise_for :users, class_name: 'Accounts::Models::User', controllers: {sessions: 'accounts/controllers/sessions'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
