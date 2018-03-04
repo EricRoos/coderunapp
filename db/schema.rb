@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304204509) do
+ActiveRecord::Schema.define(version: 20180304211704) do
 
   create_table "accounts_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20180304204509) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_accounts_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_users_on_reset_password_token", unique: true
+  end
+
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "organization_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_groups_on_organization_id"
   end
 
   create_table "message_meta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -61,6 +69,7 @@ ActiveRecord::Schema.define(version: 20180304204509) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "groups", "organizations"
   add_foreign_key "message_users", "accounts_users"
   add_foreign_key "message_users", "notifications_messages"
 end
