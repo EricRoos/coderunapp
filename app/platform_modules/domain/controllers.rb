@@ -1,0 +1,2 @@
+module Domain::Controllers
+end

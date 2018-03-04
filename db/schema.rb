@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303041019) do
+ActiveRecord::Schema.define(version: 20180304204509) do
 
   create_table "accounts_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -29,10 +29,38 @@ ActiveRecord::Schema.define(version: 20180303041019) do
     t.index ["reset_password_token"], name: "index_accounts_users_on_reset_password_token", unique: true
   end
 
+  create_table "message_meta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "messageable_type"
+    t.bigint "messageable_id"
+    t.bigint "notifications_message_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["messageable_type", "messageable_id"], name: "index_message_meta_on_messageable_type_and_messageable_id"
+    t.index ["notifications_message_id"], name: "index_message_meta_on_notifications_message_id"
+  end
+
+  create_table "message_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "accounts_user_id"
+    t.bigint "notifications_message_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accounts_user_id"], name: "index_message_users_on_accounts_user_id"
+    t.index ["notifications_message_id"], name: "index_message_users_on_notifications_message_id"
+  end
+
   create_table "notifications_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "message_users", "accounts_users"
+  add_foreign_key "message_users", "notifications_messages"
 end

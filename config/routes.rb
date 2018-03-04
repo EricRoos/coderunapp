@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :groups
+  resources :organizations
   get 'static/home'
   root to: 'static#home'
   get 'users/search', to: 'accounts/controllers/users#search'
