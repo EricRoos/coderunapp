@@ -1,6 +1,4 @@
 AllCops:
-  Rails:
-    Enabled: true
   DisplayCopNames: true
   DisplayStyleGuide: false
   ExtraDetails: false
@@ -9,7 +7,9 @@ AllCops:
     - bin/**/*
     - db/schema.rb
     - db/migrate/**/*
+    - config/environments/**/*
     - db/seeds.rb
+    - config/initializers/**/
     - vendor/bundle/**/*
     - lib/tasks/cucumber.rake
     - script/cucumber
