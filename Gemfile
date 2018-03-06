@@ -1,18 +1,18 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 gem 'rubocop'
-gem "capybara-webkit"
+gem 'capybara-webkit'
 gem 'jquery-rails'
 gem 'cells-rails'
 gem 'cells-slim'
 gem 'slim'
 gem 'activesupport-current_attributes'
 gem 'devise'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -60,7 +60,7 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'rspec-rails', '3.6'

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Subscribers
   class Base
     class_attribute :subscriptions_enabled
@@ -16,9 +17,9 @@ module Subscribers
     end
 
     # trigger methods when an even is captured
-    #def call(message, *args)
+    # def call(message, *args)
     #  method  = message.gsub("#{namespace}.", '')
     #  self.send(method, ActiveSupport::Notifications::Event.new(message, *args))
-    #end
+    # end
   end
 end

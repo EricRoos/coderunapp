@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Domain
   module Models
     class Organization < ApplicationRecord
@@ -8,9 +9,10 @@ module Domain
       end
 
       private
-        def max_number_groups
-          100
-        end
+
+      def max_number_groups
+        100
+      end
     end
   end
 end

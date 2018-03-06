@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 module Domain
   module Controllers
-    class GroupsController < BaseController 
+    class GroupsController < BaseController
       prepend_view_path 'app/platform_modules/domain/views'
       def new
         group = Models::Group.new(organization: Models::Organization.find(params[:organization_id]))
-        @group_form = Domain::Cells::GroupCell.(group).(:form)
+        @group_form = Domain::Cells::GroupCell.call(group).call(:form)
         respond_to do |format|
           format.js { render 'groups/new', layout: false }
         end
@@ -14,11 +15,11 @@ module Domain
         respond_to do |format|
           @group = Models::Group.create(group_params)
           if @group.errors.any?
-            @group_form = Domain::Cells::GroupCell.(@group).(:form)
+            @group_form = Domain::Cells::GroupCell.call(@group).call(:form)
             format.js { render 'groups/new', layout: false }
           else
             organization = @group.organization
-            @organization = Domain::Cells::OrganizationCell.(organization).()
+            @organization = Domain::Cells::OrganizationCell.call(organization).call
             format.js { render 'groups/create', layout: false }
           end
         end

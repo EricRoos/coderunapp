@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Authentication
   extend ActiveSupport::Concern
 
@@ -6,9 +7,10 @@ module Authentication
   end
 
   private
-    def authenticate
-      if authenticated_user = current_user
-        Current.user = authenticated_user
-      end
+
+  def authenticate
+    if authenticated_user = current_user
+      Current.user = authenticated_user
     end
+  end
 end

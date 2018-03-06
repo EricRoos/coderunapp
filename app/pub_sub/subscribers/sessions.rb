@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Subscribers
   class Sessions < ::Subscribers::Base
     def logged_in(event)

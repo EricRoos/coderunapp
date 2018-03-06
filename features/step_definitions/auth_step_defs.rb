@@ -1,4 +1,5 @@
-Given("I am logged in") do
+# frozen_string_literal: true
+Given('I am logged in') do
   user = Accounts::Models::User.new
   email = 'test@test.com'
   password = '123456'

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class EventBusObserver
   attr_reader :proxy, :stream_name
   def initialize(observer_proxy, stream_name)
@@ -6,7 +7,7 @@ class EventBusObserver
   end
 
   def call(message, *args)
-    method  = message.gsub("#{stream_name}.", '') 
+    method = message.gsub("#{stream_name}.", '')
     proxy.send(method, ActiveSupport::Notifications::Event.new(message, *args))
-  end 
+  end
 end
