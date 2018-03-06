@@ -1,9 +1,5 @@
 version: 0.2
 
-env:
-  variables:
-    RAILS_ENV: "development"
-            
 phases:
   install:
     commands:
@@ -17,3 +13,6 @@ phases:
     commands:
       - bundle exec rspec
       - bundle exec cucumber
+  after_build:
+    commands:
+      - containerize
