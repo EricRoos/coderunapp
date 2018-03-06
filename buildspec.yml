@@ -13,6 +13,3 @@ phases:
     commands:
       - bundle exec rspec
       - bundle exec cucumber
-  after_build:
-    commands:
-      - containerize
