@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 module EventBus
   module_function
+
   def broadcast(stream_name, event, payload)
     event_name = "#{stream_name}.#{event}"
     ActiveSupport::Notifications.instrument(event_name, payload)

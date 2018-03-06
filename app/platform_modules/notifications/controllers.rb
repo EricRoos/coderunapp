@@ -1,3 +1,5 @@
 # frozen_string_literal: true
-module Notifications::Controllers
+module Notifications
+  module Controllers
+  end
 end

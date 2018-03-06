@@ -1,3 +1,5 @@
 # frozen_string_literal: true
-module Domain::Cells
+module Domain
+  module Cells
+  end
 end

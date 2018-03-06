@@ -6,15 +6,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'codeclimate-test-reporter'
-gem 'rubocop', '~> 0.49.0'
+gem 'activesupport-current_attributes'
 gem 'capybara-webkit'
-gem 'jquery-rails'
 gem 'cells-rails'
 gem 'cells-slim'
-gem 'slim'
-gem 'activesupport-current_attributes'
 gem 'devise'
+gem 'codeclimate-test-reporter'
+gem 'jquery-rails'
+gem 'rubocop', '~> 0.49.0'
+gem 'slim'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -48,26 +48,26 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
   gem 'pry'
+  gem 'selenium-webdriver'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
 group :test do
   gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'faker'
   gem 'rspec-rails', '3.6'
   gem 'rspec-mocks', '3.6'
-  gem 'faker'
   gem 'simplecov', require: false
 end
 

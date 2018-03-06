@@ -1,3 +1,5 @@
 # frozen_string_literal: true
-module Domain::Controllers
+module Domain
+  module Controllers
+  end
 end

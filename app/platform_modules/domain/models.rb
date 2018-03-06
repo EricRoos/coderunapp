@@ -1,3 +1,5 @@
 # frozen_string_literal: true
-module Domain::Models
+module Domain
+  module Models
+  end
 end

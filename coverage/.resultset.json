@@ -211,6 +211,8 @@
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/accounts/controllers.rb": [
         null,
         1,
+        1,
+        null,
         null
       ],
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/accounts/controllers/sessions_controller.rb": [
@@ -246,6 +248,8 @@
         1,
         1,
         1,
+        1,
+        null,
         null,
         null
       ],
@@ -273,6 +277,8 @@
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/domain/models.rb": [
         null,
         1,
+        1,
+        null,
         null
       ],
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/domain/models/organization.rb": [
@@ -301,8 +307,12 @@
         1,
         1,
         1,
+        null,
         1,
+        null,
         1,
+        null,
+        null,
         null,
         null,
         null
@@ -310,6 +320,8 @@
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/domain/controllers.rb": [
         null,
         1,
+        1,
+        null,
         null
       ],
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/domain/controllers/organizations_controller.rb": [
@@ -341,6 +353,8 @@
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/domain/cells.rb": [
         null,
         1,
+        1,
+        null,
         null
       ],
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/platform_modules/domain/cells/organization_cell.rb": [
@@ -498,6 +512,6 @@
         null
       ]
     },
-    "timestamp": 1520310945
+    "timestamp": 1520311475
   }
 }
