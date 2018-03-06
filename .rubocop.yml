@@ -8,9 +8,14 @@ AllCops:
   Exclude:
     - bin/**/*
     - db/schema.rb
+    - db/migrate/**/*
     - db/seeds.rb
     - vendor/bundle/**/*
     - lib/tasks/cucumber.rake
+    - script/cucumber
+    - config/initializers/devise.rb
+    - test/test_helper.rb
+    - features/support/env.rb
 
 # Indent private/protected/public as deep as method definitions.
 Style/AccessModifierIndentation:

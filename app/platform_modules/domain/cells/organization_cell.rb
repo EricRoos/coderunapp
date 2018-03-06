@@ -19,7 +19,9 @@ module Domain
 
       def groups_list
         content_tag :ul do
-          groups.first(10).collect { |g| content_tag(:li, g.name, class: 'group') }.join('').html_safe
+          groups.first(10).collect do |g|
+            content_tag(:li, g.name, class: 'group')
+          end.join('').html_safe
         end
       end
 
