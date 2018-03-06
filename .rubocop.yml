@@ -131,6 +131,10 @@ Style/DoubleNegation:
 Style/EmptyElse:
   EnforcedStyle: both
 
+Layout/EmptyLineAfterMagicComment:
+  Description: 'Add an empty line after magic comments to separate them from code.'
+  Enabled: false
+
 # Require empty lines only between multi-line method definitions.
 Style/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true
