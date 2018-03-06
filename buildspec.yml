@@ -5,6 +5,9 @@ env:
     RAILS_ENV: "development"
             
 phases:
+  install:
+    commands:
+      - gem install bundler
   build:
     commands:
       - bundle exec rspec
