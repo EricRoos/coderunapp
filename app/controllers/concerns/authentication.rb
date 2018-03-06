@@ -9,8 +9,8 @@ module Authentication
   private
 
   def authenticate
-    if (authenticated_user = current_user).present?
-      Current.user = authenticated_user
+    return unless (authenticated_user = current_user).present?
+    Current.user = authenticated_user
     end
   end
 end

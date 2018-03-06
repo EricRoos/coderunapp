@@ -66,8 +66,8 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'faker'
-  gem 'rspec-rails', '3.6'
   gem 'rspec-mocks', '3.6'
+  gem 'rspec-rails', '3.6'
   gem 'simplecov', require: false
 end
 
