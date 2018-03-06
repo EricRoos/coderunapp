@@ -18,3 +18,6 @@ phases:
   post_build:
     commands:
       - zip -r coderunv2.zip .
+artifacts:
+  files:
+    - ./coderunv2.zip
