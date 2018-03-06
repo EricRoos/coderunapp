@@ -9,6 +9,8 @@ phases:
   pre_build:
     commands:
       - bundle install
+      - "bundle exec rake db:create"
+      - "bundle exec rake db:migrate"
   build:
     commands:
       - bundle exec rspec
