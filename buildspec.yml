@@ -8,6 +8,9 @@ phases:
   install:
     commands:
       - gem install bundler
+  pre_build:
+    commands:
+      - bundle install
   build:
     commands:
       - bundle exec rspec
