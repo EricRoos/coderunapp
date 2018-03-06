@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :groups
-  resources :organizations
+  resources :organization_members
+  resources :organizations, controller: 'domain/controllers/organizations' do
+    resources :groups, controller: 'domain/controllers/groups'
+  end
   get 'static/home'
   root to: 'static#home'
   get 'users/search', to: 'accounts/controllers/users#search'

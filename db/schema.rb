@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304211704) do
+ActiveRecord::Schema.define(version: 20180304221939) do
 
   create_table "accounts_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 20180304211704) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "organization_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "accounts_user_id"
+    t.bigint "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accounts_user_id"], name: "index_organization_members_on_accounts_user_id"
+    t.index ["organization_id"], name: "index_organization_members_on_organization_id"
+  end
+
   create_table "organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "type"
@@ -72,4 +81,6 @@ ActiveRecord::Schema.define(version: 20180304211704) do
   add_foreign_key "groups", "organizations"
   add_foreign_key "message_users", "accounts_users"
   add_foreign_key "message_users", "notifications_messages"
+  add_foreign_key "organization_members", "accounts_users"
+  add_foreign_key "organization_members", "organizations"
 end

@@ -1,9 +1,18 @@
 <% if Current.user %>
   <%= Current.user.email %>
-  <h2>Message Center</h2>
-  <% Current.user.messages.each do |message| %>
-    <%= message.content %>
-  <% end %>
+  <div id='message-center'>
+    <h2>Message Center</h2>
+    <% Current.user.messages.each do |message| %>
+      <%= message.content %>
+    <% end %>
+  </div>
+  <div id='organizations'>
+    <h2>Organizations</h2>
+    <ul>
+      <% Current.user.organizations.each do |org| %>
+        <li><%= org.name %></li>
+      <% end %>
+  </div>
 <% else %>
   <h1>CodeRun</h1>
 <% end %>

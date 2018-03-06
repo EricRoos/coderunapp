@@ -14,10 +14,16 @@ Then("I should see the Message Center") do
 end
 
 Given("I am apart of {int} organization") do |int|
-  binding.pry
-  pending # Write code here that turns the phrase above into concrete actions
+  int.times do 
+    org = ::Domain::Models::Organization.create(name: 'test')
+    @current_user.organizations << org
+  end
 end
 
 Then("I should see my organizations names") do
-  pending # Write code here that turns the phrase above into concrete actions
+  within("#organizations") do
+    @current_user.organizations.each do |org|
+      expect(page).to have_content(org.name)
+    end
+  end
 end

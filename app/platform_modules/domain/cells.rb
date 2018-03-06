@@ -1,0 +1,2 @@
+module Domain::Cells
+end

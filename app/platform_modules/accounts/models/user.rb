@@ -6,6 +6,8 @@ module Accounts
       devise :database_authenticatable, :registerable,
              :recoverable, :rememberable, :trackable, :validatable
       include Messageable
+      has_many :organization_members, foreign_key: 'accounts_user_id'
+      has_many :organizations, through: :organization_members
     end
 
   end

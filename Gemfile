@@ -4,9 +4,15 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem "capybara-webkit"
+gem 'jquery-rails'
+gem 'cells-rails'
+gem 'cells-slim'
+gem 'slim'
 gem 'activesupport-current_attributes'
 gem 'devise'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use mysql as the database for Active Record
@@ -58,6 +64,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '3.6'
   gem 'rspec-mocks', '3.6'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
