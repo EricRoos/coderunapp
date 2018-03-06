@@ -123,7 +123,6 @@
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/controllers/static_controller.rb": [
         null,
         1,
-        1,
         null
       ],
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/controllers/application_controller.rb": [
@@ -520,6 +519,6 @@
         null
       ]
     },
-    "timestamp": 1520312182
+    "timestamp": 1520312258
   }
 }
