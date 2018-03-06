@@ -124,7 +124,6 @@
         null,
         1,
         1,
-        null,
         null
       ],
       "/Users/eroos/dev/TeladocWorkspace/code_run_v2/app/controllers/application_controller.rb": [
@@ -180,7 +179,6 @@
         1,
         33,
         26,
-        null,
         null,
         null
       ],
@@ -492,15 +490,25 @@
         6,
         6,
         6,
-        null,
         6,
         6,
         null,
         null,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
+        1,
         6,
         6,
         null,
         null,
+        null,
+        1,
+        6,
+        6,
         null,
         null,
         null,
@@ -512,6 +520,6 @@
         null
       ]
     },
-    "timestamp": 1520311475
+    "timestamp": 1520312182
   }
 }

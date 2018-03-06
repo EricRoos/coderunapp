@@ -31,16 +31,26 @@ module Domain
         form_url = ::Rails.application.routes.url_helpers.organization_groups_path(organization.id)
         capture do
           form_for(model, url: form_url, authenticity_token: false, remote: true) do |f|
-            concat f.hidden_field(:organization_id, value: organization.id)
-
-            concat(content_tag(:div) do
-              f.text_field :name, placeholder: 'Name', label: 'name'
-            end)
-
-            concat(content_tag(:div) do
-              f.submit(value: 'Create')
-            end)
+            concat org_id_hidden_field(f)
+            concat name_field(f)
+            concat submit_button(f)
           end
+        end
+      end
+
+      def org_id_hidden_field(form)
+        form.hidden_field(:organization_id, value: organization.id)
+      end
+
+      def name_field(form)
+        content_tag(:div) do
+          form.text_field :name, placeholder: 'Name', label: 'name'
+        end
+      end
+
+      def submit_button(form)
+        content_tag(:div) do
+          form.submit(value: 'Create')
         end
       end
 
