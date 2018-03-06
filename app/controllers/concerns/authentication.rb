@@ -11,6 +11,5 @@ module Authentication
   def authenticate
     return unless (authenticated_user = current_user).present?
     Current.user = authenticated_user
-    end
   end
 end
