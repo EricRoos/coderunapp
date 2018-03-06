@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - apt-get update
-      - apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x nodejs
+      - apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x nodejs qtdeclarative5-dev g++ xvfb
       - gem install bundler
   pre_build:
     commands:
@@ -14,4 +14,4 @@ phases:
   build:
     commands:
       - bundle exec rspec
-      - bundle exec cucumber
+      - xvfb-run --auto-servernum bundle exec cucumber
