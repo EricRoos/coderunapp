@@ -11,8 +11,8 @@ module CodeRunV2
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.autoload_paths += Dir[Rails.root.join('app', 'platform_modules', '**/')]
-    config.autoload_paths += Dir[Rails.root.join('lib')]
+    config.eager_load_paths += Dir[Rails.root.join('app', 'platform_modules', '**/')]
+    config.eager_load_paths += Dir[Rails.root.join('lib')]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

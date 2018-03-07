@@ -8,6 +8,6 @@ module Trackable
   private
 
   def log_action
-    Rails.logger.info "LOGGING PAGE VIEW FOR #{Current.user}"
+    Rails.logger.info "LOGGING PAGE VIEW FOR #{::Current.user}"
   end
 end

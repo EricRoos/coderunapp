@@ -50,7 +50,7 @@ test: &test
 production:
   <<: *default
   database: code_run_v2_production
-  username: code_run_v2
+  username: test
   password: <%= ENV['CODE_RUN_V2_DATABASE_PASSWORD'] %>
 
 cucumber:
