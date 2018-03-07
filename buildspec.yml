@@ -17,7 +17,7 @@ phases:
       - xvfb-run --auto-servernum bundle exec cucumber
   post_build:
     commands:
-      - zip -r coderunv2.zip *
+      - zip -r coderunv2.zip .
 artifacts:
   files:
     - ./coderunv2.zip
