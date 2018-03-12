@@ -25,6 +25,18 @@ module Domain
         end
       end
 
+      #def delete
+      #  respond_to do |format|
+      #    @group = Models::Group.find(params[:id])
+      #    @group.delete
+      #    format.js { render 'groups/delete', layout: false }
+      #  end
+      #end
+
+      def show
+
+      end
+
       protected
 
       def group_params

@@ -9,6 +9,7 @@ module Domain
       validates_uniqueness_of :name,
         scope: :organization,
         message: 'name must be unique to the orginization'
+
     end
   end
 end

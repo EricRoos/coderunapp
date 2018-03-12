@@ -20,8 +20,15 @@ module Domain
       def groups_list
         content_tag :ul do
           groups.first(10).collect do |g|
-            content_tag(:li, g.name, class: 'group')
+            content_tag(:li, group_item(g), class: 'group')
           end.join('').html_safe
+        end
+      end
+
+      def group_item(group)
+        content_tag :div do
+          url = ::Rails.application.routes.url_helpers.organization_group_path(model, group)
+          link_to(group.name, url)
         end
       end
 

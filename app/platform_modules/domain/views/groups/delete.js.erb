@@ -1,0 +1,2 @@
+<% org = Domain::Cells::OrganizationCell.call(@group.organization).call %>
+document.getElementById('organization').innerHTML = "<%=escape_javascript(org) %>";
