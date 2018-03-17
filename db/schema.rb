@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304221939) do
+ActiveRecord::Schema.define(version: 20180312032315) do
 
   create_table "accounts_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20180304221939) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_accounts_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_users_on_reset_password_token", unique: true
+  end
+
+  create_table "group_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "organization_member_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_members_on_group_id"
+    t.index ["organization_member_id"], name: "index_group_members_on_organization_member_id"
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -78,9 +87,21 @@ ActiveRecord::Schema.define(version: 20180304221939) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.string "description_md"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_projects_on_group_id"
+  end
+
+  add_foreign_key "group_members", "groups"
+  add_foreign_key "group_members", "organization_members"
   add_foreign_key "groups", "organizations"
   add_foreign_key "message_users", "accounts_users"
   add_foreign_key "message_users", "notifications_messages"
   add_foreign_key "organization_members", "accounts_users"
   add_foreign_key "organization_members", "organizations"
+  add_foreign_key "projects", "groups"
 end

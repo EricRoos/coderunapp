@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization_member: one
+  group: one
+
+two:
+  organization_member: two
+  group: two

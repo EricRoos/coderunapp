@@ -34,7 +34,11 @@ module Domain
       #end
 
       def show
-
+        group = Models::Group.find(params[:id])
+        @group = Domain::Cells::GroupCell.call(group).call()
+        respond_to do |format|
+          format.html { render 'groups/show' }
+        end
       end
 
       protected

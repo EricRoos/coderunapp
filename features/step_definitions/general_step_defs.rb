@@ -15,4 +15,5 @@ When('I wait for ajax') do
   Timeout.timeout(Capybara.default_max_wait_time) do
     loop until page.evaluate_script('$.active').to_i.zero?
   end
+  sleep 0.5
 end
